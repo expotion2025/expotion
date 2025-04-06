@@ -1,26 +1,46 @@
 import os
 import re
+import csv
 from collections import defaultdict
 
-# Path to your merged_videos folder (adjust if needed)
+# ---------------------------
+# Load captions from CSV file
+# ---------------------------
+# The CSV file is expected to have two columns:
+#   Column 0: filename (e.g., "4.mp4_ProudPeacock_2025-02-27T13-01-50_clip2")
+#   Column 1: caption text
+captions = {}
+csv_path = "../../test.csv"  # Adjust the path if needed
+
+with open(csv_path, "r", encoding="utf-8") as f:
+    for line in f:
+        line = line.strip()
+        if not line:
+            continue
+        # Split only on the first comma
+        parts = line.split(",", 1)
+        if len(parts) == 2:
+            key = parts[0].strip()  # filename without extension
+            caption_text = parts[1].strip()
+            captions[key] = caption_text
+
+# -----------------------------------------
+# Build groups from the merged_videos folder
+# -----------------------------------------
 video_dir = '/l/users/gus.xia/fathinah/expotion/predicted_output/expotion/merged_videos'
 
 # Groups will be stored in a dictionary where:
 #   key: group prefix (everything up to and including "clip<number>_")
 #   value: dict mapping suffix -> filename
 groups = defaultdict(dict)
-
-# Set to collect all unique suffixes (for potential table ordering)
 all_suffixes = set()
 
 # Regex to extract group key and suffix.
-# For example:
-# "4.mp4_ProudPeacock_2025-02-28T12-21-34_clip2_face_only.mp4"
-# group key -> "4.mp4_ProudPeacock_2025-02-28T12-21-34_clip2_"
-# suffix   -> "face_only"
+# Example: For "4.mp4_ProudPeacock_2025-02-27T13-01-50_clip2_face_only.mp4":
+#   group key -> "4.mp4_ProudPeacock_2025-02-27T13-01-50_clip2_"
+#   suffix   -> "face_only"
 pattern = re.compile(r"^(.*clip\d+_)(.+)\.mp4$")
 
-# Iterate over all mp4 files in the folder
 for filename in os.listdir(video_dir):
     if filename.endswith(".mp4"):
         match = pattern.match(filename)
@@ -30,7 +50,9 @@ for filename in os.listdir(video_dir):
             groups[group_key][suffix] = filename
             all_suffixes.add(suffix)
 
-# Define the set of group keys that should go into the second table.
+# ---------------------------------------------
+# Split groups into two dictionaries (by group key)
+# ---------------------------------------------
 second_table_groups = {
     "161.mp4_DelightfulOwl_2025-03-06T18-06-02_clip3_",
     "46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_",
@@ -42,7 +64,6 @@ second_table_groups = {
     "56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_"
 }
 
-# Split groups into two dictionaries
 groups_first = {}   # Groups not in the second table list
 groups_second = {}  # Groups in the second table list
 
@@ -52,7 +73,10 @@ for group_key, mapping in groups.items():
     else:
         groups_first[group_key] = mapping
 
-# For the first table, we want to display only these five columns (data keys)
+# ---------------------------------------------
+# Table definitions and header mappings
+# ---------------------------------------------
+# First table: Fixed columns and header mapping.
 first_table_columns = [
     "vidmuse_video",
     "baseline_musicgen_video",
@@ -60,7 +84,6 @@ first_table_columns = [
     "face_synch"
 ]
 
-# Header mapping for the first table
 first_table_header_mapping = {
     "vidmuse_video": "VidMuse",
     "baseline_musicgen_video": "MusicGen",
@@ -68,33 +91,35 @@ first_table_header_mapping = {
     "face_synch": "Ours(Face+Motion)"
 }
 
-# For the second table, we want a fixed order of six columns (data keys)
+# Second table: Fixed columns and header mapping.
 second_table_columns = [
     "face_only",
     "face_synch",
+    "synch_5fps_video",
     "raft_5fps_video",
     "raft_nocap_video",
-    "synch_5fps_video",
     "synch_nocap_all_5fps_video"
 ]
 
-# Header mapping for the second table
 second_table_header_mapping = {
     "face_only": "Face Only",
-    "face_synch": "Face+Motion",
+    "face_synch": "Face+Motion🏆",
+    "synch_5fps_video": "Motion(S)🏆",
     "raft_5fps_video": "Motion(R)",
     "raft_nocap_video": "Motion(R) NC",
-    "synch_5fps_video": "Motion(S)",
     "synch_nocap_all_5fps_video": "Motion (S) NC"
 }
 
-def generate_table_html_no_group(groups_dict, column_order, header_mapping=None):
-    """
-    Generate HTML for a table without a group column.
-    Each row corresponds to one group, and each cell in the row is based on the fixed column order.
-    Optionally uses header_mapping to display friendly column names.
-    """
-    html = '<table>\n'
+# ------------------------------------------------------------
+# Function to generate HTML for a table without a group column.
+# Now the caption is added in a row below each group's video row.
+# If table_class is provided, it is added to the <table> tag.
+# If split_nc is True, the caption row will merge only the first (total_columns - split_nc_count) cells,
+# and then add separate cells with "N/A" for the remaining columns.
+# ------------------------------------------------------------
+def generate_table_html_no_group(groups_dict, column_order, header_mapping=None, captions_dict=None, split_nc=False, split_nc_count=0, table_class=""):
+    class_attr = f' class="{table_class}"' if table_class else ""
+    html = f'<table{class_attr}>\n'
     html += '  <thead>\n'
     html += '    <tr>\n'
     for col in column_order:
@@ -103,11 +128,12 @@ def generate_table_html_no_group(groups_dict, column_order, header_mapping=None)
     html += '    </tr>\n'
     html += '  </thead>\n'
     html += '  <tbody>\n'
+    # For each group, create two rows: one for videos, one for the caption.
     for group_key, suffix_dict in groups_dict.items():
+        # First row: video cells.
         html += '    <tr>\n'
         for col in column_order:
             if col in suffix_dict:
-                # Construct relative path (assumes merged_videos folder is alongside the HTML)
                 video_path = f"merged_videos/{suffix_dict[col]}"
                 html += '      <td>\n'
                 html += '        <video width="320" controls>\n'
@@ -118,17 +144,40 @@ def generate_table_html_no_group(groups_dict, column_order, header_mapping=None)
             else:
                 html += '      <td></td>\n'
         html += '    </tr>\n'
+        # Second row: caption.
+        lookup_key = group_key.rstrip('_')
+        caption_text = captions_dict.get(lookup_key, "") if captions_dict else ""
+        if split_nc:
+            total_cols = len(column_order)
+            merged_cols = total_cols - split_nc_count
+            html += f'    <tr><td colspan="{merged_cols}" style="text-align:left;font-style:italic;color:#555;">{caption_text}</td>'
+            for _ in range(split_nc_count):
+                html += '<td>Music with catchy melody</td>'
+            html += '</tr>\n'
+        else:
+            colspan = len(column_order)
+            html += f'    <tr><td colspan="{colspan}" style="text-align:left;font-style:italic;color:#555;">{caption_text}</td></tr>\n'
     html += '  </tbody>\n'
     html += '</table>\n'
     return html
 
-# Generate the first table using the fixed five columns and header mapping (no group name)
-html_table_first = generate_table_html_no_group(groups_first, first_table_columns, first_table_header_mapping)
+# ------------------------------------------------------------
+# Generate both tables.
+# For the first table, use the default merged caption row.
+html_table_first = generate_table_html_no_group(groups_first, first_table_columns, first_table_header_mapping, captions)
 
-# Generate the second table using the fixed six columns and header mapping (no group name)
-html_table_second = generate_table_html_no_group(groups_second, second_table_columns, second_table_header_mapping)
+# For the second table, split the caption row so that the last 2 columns are not merged,
+# and assign a table class to enable fixed layout.
+html_table_second = generate_table_html_no_group(groups_second, second_table_columns, second_table_header_mapping, captions, split_nc=True, split_nc_count=2, table_class="table2")
 
-# Combine the two tables into a full HTML page with emoticons and table titles.
+# ------------------------------------------------------------
+# Escape any curly braces in the generated table HTML to avoid format() errors.
+safe_table1 = html_table_first.replace("{", "{{").replace("}", "}}")
+safe_table2 = html_table_second.replace("{", "{{").replace("}", "}}")
+
+# ------------------------------------------------------------
+# Combine the two tables into a full HTML page with styling and notes.
+# ------------------------------------------------------------
 full_html = """
 <!DOCTYPE html>
 <html lang="en">
@@ -141,6 +190,13 @@ full_html = """
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 2rem;
+    }}
+    /* Fixed layout for table2 to ensure consistent column widths */
+    table.table2 {{
+      table-layout: fixed;
+    }}
+    table.table2 th, table.table2 td {{
+      width: calc(100% / 6);
     }}
     th, td {{
       padding: 0.5rem;
@@ -172,10 +228,10 @@ full_html = """
   <p class="note">💡 Note: "Motion(R)" means Motion with RAFT, "Motion(S)" means Motion with Synchformer, and "NC" means no caption (generic caption).</p>
 </body>
 </html>
-""".format(table1=html_table_first, table2=html_table_second)
+""".format(table1=safe_table1, table2=safe_table2)
 
-# Write the full HTML to a file
-with open("videos_tables.html", "w") as f:
+# Write the full HTML to a file (e.g., index.html)
+with open("index.html", "w") as f:
     f.write(full_html)
 
-print("HTML with two tables generated and saved as videos_tables.html")
+print("HTML with two tables (with modified caption rows in second table) generated and saved as index.html")

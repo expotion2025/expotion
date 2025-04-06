@@ -11,6 +11,13 @@
       border-collapse: collapse;
       margin-bottom: 2rem;
     }
+    /* Fixed layout for table2 to ensure consistent column widths */
+    table.table2 {
+      table-layout: fixed;
+    }
+    table.table2 th, table.table2 td {
+      width: calc(100% / 6);
+    }
     th, td {
       padding: 0.5rem;
       border: 1px solid #ccc;
@@ -71,6 +78,7 @@
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">This is an instrumental classical music piece. The main melody is played by a violin, accompanied by a cello and a piano. The overall mood of the piece is melancholic, with the violin playing a slow and mournful melody. The piece has a slow tempo and a somber atmosphere. It could be used in the soundtrack of a historical drama set in the 18th century.</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -97,6 +105,7 @@
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">This is an instrumental hip-hop track. The main melody is provided by a synthesizer playing a simple, repetitive melody. The bass line is played by an electric bass. The rhythm is provided by a drum machine playing a simple beat. There are no voices in this track. The atmosphere is chill and relaxed. This track could be used in the soundtrack of a movie or a TV show set in a futuristic city. It could also be used as background music in a chillout lounge.</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -123,6 +132,7 @@
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">This is an instrumental reggae song. The main melody is played on a ukulele, which gives the song a cheerful and upbeat feel. The rhythm is provided by a reggae drum beat and a bass guitar. The song has a laid-back and relaxed vibe, which makes it perfect for listening to while lounging on the beach or smoking a joint.</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -149,6 +159,7 @@
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">The song is an electronic instrumental. The tempo is medium with a synthesizer playing a simple melody. The song has a futuristic feel to it. The song is a dance track. There are no voices in the song. The song is a dance track with a futuristic feel to it. The song is a dance track with a futuristic feel to it. The song is a dance track with a futuristic feel to it. The song is a dance track with a futuristic feel to it. The song is a dance track with a futuristic feel to it. The song is a dance track with a futuristic feel to it. The song is a dance track with a futuristic feel to it. The song is a dance track with a futuristic feel to it. The song is a dance track with a futuristic feel to it. The song is a dance track with a futuristic feel to it. The</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -175,6 +186,7 @@
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">This is an instrumental post-rock piece. The main melody is played by a softly strummed acoustic guitar. Theres a mellow electric guitar playing chords in the background. The rhythm is provided by a simple and steady drum beat. The atmosphere is calm and relaxed. This piece could be used in the soundtrack of a movie or a TV show that takes place in a scenic countryside. It could also be used as background music for a meditation or yoga video.</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -201,6 +213,7 @@
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">The song is an instrumental hip-hop track. The main melody is played by a saxophone. The song has a mellow and chill vibe. The bassline is simple and repetitive. The song has a relaxed and laid-back feel to it. There are no vocals in the song.</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -227,18 +240,19 @@
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">The music is an instrumental classical piece with a dark and ominous tone. The main melody is played by a string section, with a harpsichord providing additional harmony. There is a sense of tension and foreboding throughout the piece, as if something terrible is about to happen. The overall mood is eerie and unsettling.</td></tr>
   </tbody>
 </table>
 
   <h1>🎶 Generated Music on Different Visual Extractors</h1>
-  <table>
+  <table class="table2">
   <thead>
     <tr>
       <th>Face Only</th>
-      <th>Face+Motion</th>
+      <th>Face+Motion🏆</th>
+      <th>Motion(S)🏆</th>
       <th>Motion(R)</th>
       <th>Motion(R) NC</th>
-      <th>Motion(S)</th>
       <th>Motion (S) NC</th>
     </tr>
   </thead>
@@ -258,6 +272,12 @@
       </td>
       <td>
         <video width="320" controls>
+          <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
           <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_raft_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -270,17 +290,12 @@
       </td>
       <td>
         <video width="320" controls>
-          <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_synch_5fps_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </td>
-      <td>
-        <video width="320" controls>
           <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_synch_nocap_all_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">This is an instrumental electronic dance music piece. The tempo is fast with a synthesized bass line, punchy kick and snare hits, and a hi-hat rhythm. The melody is provided by a synthesizer playing a sequence of notes. The overall mood of the piece is upbeat and energetic.There are no vocals in this piece.This piece could be used in the soundtrack of a dance video game or as background music for a party scene in a movie or TV show.</td><td>Music with catchy melody</td><td>Music with catchy melody</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -291,6 +306,12 @@
       <td>
         <video width="320" controls>
           <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_synch_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
@@ -308,17 +329,12 @@
       </td>
       <td>
         <video width="320" controls>
-          <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_synch_5fps_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </td>
-      <td>
-        <video width="320" controls>
           <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_synch_nocap_all_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">This is an instrumental classical music piece. The main instrument used is the piano. The piece has a mellow and soothing feel to it. It has a slow tempo and a melancholic melody. The piece has a sad and emotional feel to it. It could be used as background music for a scene in a movie or a TV show where the characters are experiencing sadness or grief. It could also be used as a soundtrack for a documentary about a historical event or a social issue. Overall, this piece has a beautiful and emotional sound to it.</td><td>Music with catchy melody</td><td>Music with catchy melody</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -329,6 +345,12 @@
       <td>
         <video width="320" controls>
           <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_synch_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
@@ -346,17 +368,12 @@
       </td>
       <td>
         <video width="320" controls>
-          <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_synch_5fps_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </td>
-      <td>
-        <video width="320" controls>
           <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_synch_nocap_all_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">The song is an instrumental jazz piece. The main instrument is the piano, which is played in a jazzy, improvisational style. The piano is accompanied by a bass guitar, which provides a steady, walking bass line. The overall mood of the song is relaxed and laid-back. There is a sense of nostalgia and longing associated with the song. It could be used as background music for a romantic scene in a movie or TV show.</td><td>Music with catchy melody</td><td>Music with catchy melody</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -367,6 +384,12 @@
       <td>
         <video width="320" controls>
           <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_synch_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
@@ -384,17 +407,12 @@
       </td>
       <td>
         <video width="320" controls>
-          <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_synch_5fps_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </td>
-      <td>
-        <video width="320" controls>
           <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_synch_nocap_all_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">This is an electronic dance music (EDM) piece. The main melody is played on a synthesizer, with a bassline playing in the lower register. The rhythm is provided by a drum machine, with a steady 4/4 beat. The overall mood of the piece is upbeat and energetic. This piece could be used in the soundtrack of a dance video game or as part of a DJs set at a nightclub.</td><td>Music with catchy melody</td><td>Music with catchy melody</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -405,6 +423,12 @@
       <td>
         <video width="320" controls>
           <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_synch_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
@@ -422,17 +446,12 @@
       </td>
       <td>
         <video width="320" controls>
-          <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_synch_5fps_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </td>
-      <td>
-        <video width="320" controls>
           <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_synch_nocap_all_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">The music is a hard rock instrumental. The tempo is fast with aggressive guitar riffs, pounding drums, and powerful bass. The music is intense and energetic, with a strong sense of determination and drive. The guitar riffs are complex and intricate, with a lot of distortion and reverb. The drums are punchy and powerful, with a lot of cymbal crashes and snare hits. The bass is punchy and aggressive, with a lot of distortion and reverb. The overall mood of the music is aggressive and intense, with a strong sense of determination and drive.</td><td>Music with catchy melody</td><td>Music with catchy melody</td></tr>
     <tr>
       <td>
         <video width="320" controls>
@@ -443,6 +462,12 @@
       <td>
         <video width="320" controls>
           <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_synch_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
@@ -460,17 +485,12 @@
       </td>
       <td>
         <video width="320" controls>
-          <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_synch_5fps_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </td>
-      <td>
-        <video width="320" controls>
           <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_synch_nocap_all_5fps_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </td>
     </tr>
+    <tr><td colspan="4" style="text-align:left;font-style:italic;color:#555;">The song is an instrumental hard rock piece with a heavy emphasis on guitar riffs and aggressive drumming. The guitar riffs are heavy and distorted, with a lot of power chords and palm-muted passages. The drumming is fast-paced and aggressive, with a lot of double-bass drumming and cymbal crashes. The overall mood of the song is aggressive and intense, with a lot of energy and power.There is no vocalist in this song, as it is an instrumental piece. However, the guitar riffs and drumming provide a strong sense of rhythm and drive, creating a powerful and energetic atmosphere. The guitar riffs are heavy and distorted, with a lot of power chords and palm-muted passages. The drumming is fast-paced and aggressive, with a lot of double-bass drum</td><td>Music with catchy melody</td><td>Music with catchy melody</td></tr>
   </tbody>
 </table>
 

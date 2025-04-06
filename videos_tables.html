@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Tables</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    th, td {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    h1 {
+      color: #333;
+    }
+    p.note {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 Baselines VS Ours</h1>
+  <table>
+  <thead>
+    <tr>
+      <th>VidMuse</th>
+      <th>MusicGen</th>
+      <th>Ours(Motion)</th>
+      <th>Ours(Face+Motion)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/418.mp4_ThankfulElephant_2025-03-10T16-12-41_clip1_vidmuse_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/418.mp4_ThankfulElephant_2025-03-10T16-12-41_clip1_baseline_musicgen_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/418.mp4_ThankfulElephant_2025-03-10T16-12-41_clip1_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/418.mp4_ThankfulElephant_2025-03-10T16-12-41_clip1_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/79.mp4_HumbleFox_2025-02-21T21-36-37_clip3_vidmuse_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/79.mp4_HumbleFox_2025-02-21T21-36-37_clip3_baseline_musicgen_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/79.mp4_HumbleFox_2025-02-21T21-36-37_clip3_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/79.mp4_HumbleFox_2025-02-21T21-36-37_clip3_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/548.mp4_ThankfulElephant_2025-03-10T13-39-57_clip2_vidmuse_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/548.mp4_ThankfulElephant_2025-03-10T13-39-57_clip2_baseline_musicgen_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/548.mp4_ThankfulElephant_2025-03-10T13-39-57_clip2_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/548.mp4_ThankfulElephant_2025-03-10T13-39-57_clip2_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/5.mp4_EagerRabbit_2025-03-01T04-45-17_clip2_vidmuse_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/5.mp4_EagerRabbit_2025-03-01T04-45-17_clip2_baseline_musicgen_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/5.mp4_EagerRabbit_2025-03-01T04-45-17_clip2_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/5.mp4_EagerRabbit_2025-03-01T04-45-17_clip2_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/76.mp4_EnergeticMonkey_2025-02-13T12-22-49_clip6_vidmuse_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/76.mp4_EnergeticMonkey_2025-02-13T12-22-49_clip6_baseline_musicgen_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/76.mp4_EnergeticMonkey_2025-02-13T12-22-49_clip6_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/76.mp4_EnergeticMonkey_2025-02-13T12-22-49_clip6_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/4.mp4_ProudPeacock_2025-02-28T12-21-34_clip2_vidmuse_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/4.mp4_ProudPeacock_2025-02-28T12-21-34_clip2_baseline_musicgen_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/4.mp4_ProudPeacock_2025-02-28T12-21-34_clip2_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/4.mp4_ProudPeacock_2025-02-28T12-21-34_clip2_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/168.mp4_NiceWolf_2025-03-11T12-57-18_clip2_vidmuse_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/168.mp4_NiceWolf_2025-03-11T12-57-18_clip2_baseline_musicgen_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/168.mp4_NiceWolf_2025-03-11T12-57-18_clip2_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/168.mp4_NiceWolf_2025-03-11T12-57-18_clip2_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <h1>🎶 Generated Music on Different Visual Extractors</h1>
+  <table>
+  <thead>
+    <tr>
+      <th>Face Only</th>
+      <th>Face+Motion</th>
+      <th>Motion(R)</th>
+      <th>Motion(R) NC</th>
+      <th>Motion(S)</th>
+      <th>Motion (S) NC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_face_only.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_raft_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_raft_nocap_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/20.mp4_ProudPeacock_2025-02-26T09-54-39_clip10_synch_nocap_all_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_face_only.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_raft_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_raft_nocap_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/54.mp4_EnergeticMonkey_2025-03-01T10-26-38_clip18_synch_nocap_all_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_face_only.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_raft_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_raft_nocap_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/46.mp4_DelightfulOwl_2025-03-06T19-27-32_clip3_synch_nocap_all_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_face_only.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_raft_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_raft_nocap_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/106.mp4_NiceWolf_2025-03-11T12-46-02_clip1_synch_nocap_all_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_face_only.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_raft_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_raft_nocap_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/540.mp4_DelightfulOwl_2025-03-06T19-11-18_clip3_synch_nocap_all_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_face_only.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_face_synch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_raft_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_raft_nocap_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_synch_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="merged_videos/56.mp4_EagerRabbit_2025-03-01T05-12-36_clip2_synch_nocap_all_5fps_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <p class="note">💡 Note: "Motion(R)" means Motion with RAFT, "Motion(S)" means Motion with Synchformer, and "NC" means no caption (generic caption).</p>
+</body>
+</html>
